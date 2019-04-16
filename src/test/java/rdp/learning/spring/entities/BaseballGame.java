@@ -1,8 +1,11 @@
 package rdp.learning.spring.entities;
 
+import javax.sql.DataSource;
+
 public class BaseballGame implements Game {
 
     private Team homeTeam, awayTeam;
+    private DataSource dataSource;
 
     public BaseballGame(Team homeTeam, Team awayTeam) {
 
@@ -28,6 +31,16 @@ public class BaseballGame implements Game {
     @Override
     public Team getAwayTeam() {
         return awayTeam;
+    }
+
+    @Override
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
+    @Override
+    public DataSource getDataSource() {
+        return dataSource;
     }
 
     @Override
