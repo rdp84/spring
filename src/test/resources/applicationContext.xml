@@ -8,7 +8,16 @@
                            https://www.springframework.org/schema/context/spring-context.xsd">
 
                            <context:component-scan base-package="rdp.learning.spring" />
-                           
+                           <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" />
+
+                           <!--
+                           <bean id="nf" class="java.text.NumberFormat" factory-method="getCurrencyInstance" />
+                           -->
+
+                           <!--
+                           <bean id="xmlBuilderFactory" class="javax.xml.parsers.DocumentBuilderFactory" factory-method="newInstance" />
+                           <bean id="documentBuilder" class="javax.xml.parsers.DocumentBuilder" factory-bean="xmlBuilderFactory" factory-method="newDocumentBuilder" />
+                           -->
                            <!--
                                <bean id="redSox" class="rdp.learning.spring.entities.RedSox" />
                                <bean id="cubs" class="rdp.learning.spring.entities.Cubs" />
@@ -18,6 +27,4 @@
                                <property name="dataSource" ref="dataSource" />
                                </bean>
                            -->
-
-                           <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource" />
 </beans>
