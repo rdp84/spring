@@ -1,5 +1,8 @@
 package rdp.learning.spring.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Royals implements Team {
 
     @Override
