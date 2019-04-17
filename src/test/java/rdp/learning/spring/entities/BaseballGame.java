@@ -7,6 +7,8 @@ public class BaseballGame implements Game {
     private Team homeTeam, awayTeam;
     private DataSource dataSource;
 
+    public BaseballGame() { }
+
     public BaseballGame(Team homeTeam, Team awayTeam) {
 
         this.awayTeam = awayTeam;

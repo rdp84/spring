@@ -6,29 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ComponentScan;
 
-import javax.annotation.Resource;
 import javax.sql.DataSource;
 
 @Configuration
-@ComponentScan(basePackages = "rdp.learning.spring")
 public class AppConfig {
 
     @Autowired
     private DataSource dataSource;
 
-    // @Autowired @Qualifier("rs")
-    @Resource
-    private Team redSox;
+    @Autowired @Qualifier("redSox")
+    private Team home;
 
-    // @Autowired @Qualifier("cubs")
-    @Resource
-    private Team cubs;
+    @Autowired @Qualifier("cubs")
+    private Team away;
 
     @Bean
     public Game game() {
-        BaseballGame baseballGame = new BaseballGame(redSox, cubs);
+        BaseballGame baseballGame = new BaseballGame(home, away);
         baseballGame.setDataSource(dataSource);
         return baseballGame;
     }
